@@ -1,6 +1,6 @@
 {
-    "name": "LinkedIn Redirect",
-    "description": "Redirect LinkedIn to Google",
+    "name": "Auto Redirect",
+    "description": "Auto Redirect to the desired URL",
     "version": "1.0",
     "manifest_version": 3,
     "background": {
