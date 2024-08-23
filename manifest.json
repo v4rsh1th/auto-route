@@ -1,0 +1,16 @@
+{
+    "name": "LinkedIn Redirect",
+    "description": "Redirect LinkedIn to Google",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "declarativeNetRequest"
+    ],
+    "host_permissions": [
+        "*://linkedin.com/*",
+        "*://www.linkedin.com/*"
+    ]
+}
