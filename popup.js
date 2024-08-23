@@ -33,11 +33,17 @@ function updateSiteList() {
     siteList.innerHTML = '';
     blockedSites.forEach(site => {
         const li = document.createElement('li');
-        li.textContent = site;
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.onclick = () => removeSite(site);
-        li.appendChild(removeButton);
+        li.innerHTML = `
+            <span>${site}</span>
+            <button class="remove-btn" data-site="${site}">Remove</button>
+        `;
         siteList.appendChild(li);
+    });
+
+    // Add event listeners to remove buttons
+    document.querySelectorAll('.remove-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            removeSite(this.getAttribute('data-site'));
+        });
     });
 }
