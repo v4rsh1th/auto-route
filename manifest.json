@@ -1,16 +1,19 @@
 {
-    "name": "Auto Redirect",
-    "description": "Auto Redirect to the desired URL",
+    "name": "Website Blocker",
+    "description": "Block and redirect specified websites",
     "version": "1.0",
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
     },
     "permissions": [
-        "declarativeNetRequest"
+        "declarativeNetRequest",
+        "storage"
     ],
     "host_permissions": [
-        "*://linkedin.com/*",
-        "*://www.linkedin.com/*"
-    ]
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
 }
