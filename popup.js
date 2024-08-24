@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   document.getElementById('addSite').addEventListener('click', addSite);
+  document.getElementById('siteInput').addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+      addSite();
+    }
+  });
 });
 
 function addSite() {
