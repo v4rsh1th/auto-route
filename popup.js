@@ -18,7 +18,8 @@ function addSite() {
   const siteInput = document.getElementById('siteInput');
   const site = siteInput.value.trim();
   if (site && !blockedSites.includes(site)) {
-    blockedSites.push(site);
+    const blockPattern = site.includes('*') ? site : `${site}/*`;
+    blockedSites.push(blockPattern);
     chrome.storage.sync.set({ blockedSites: blockedSites }, function () {
       siteInput.value = '';
       updateSiteList();

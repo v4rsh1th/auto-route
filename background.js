@@ -25,14 +25,9 @@ function updateBlockRules() {
         addRules: blockedSites.map((site, index) => ({
           id: index + 1,
           priority: 1,
-          action: {
-            type: 'redirect',
-            redirect: {
-              url: 'https://www.google.com'
-            }
-          },
+          action: { type: 'block' },
           condition: {
-            urlFilter: `||${site}`,
+            urlFilter: site,
             resourceTypes: ['main_frame']
           }
         }))
